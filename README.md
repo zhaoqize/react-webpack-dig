@@ -10,9 +10,11 @@
 
 1.写Action
 ```js
+//定义action类型
 const ADD = 'ADD';
 const SUBTRACTION = 'SUBTRACTION';
 
+//定义action生成函数
 function add_todo(text){
 	return {
 		type:ADD,
@@ -32,6 +34,7 @@ export {add_todo,subtraction_todo}
 
 2.写Reducer(纯函数)
 ```js
+//设置默认值为0
 const countReducer = (state = { count: 0 },action) =>{
 	switch (action.type){
 		case 'ADD':
@@ -48,6 +51,9 @@ export {countReducer}
 
 3.createStore绑定reducer返回一个顶层的store
 ```js
+import {createStore} from 'redux'
+
+//将reducer传入createStore
 const store = createStore(countReducer)
 ```
 
