@@ -25,7 +25,7 @@ class UICouter extends Component{
 
 store.subscribe(function(){
 	//如何触发更新
-	
+	console.log(store.getState())
 })
 
  class Counter extends Component {
@@ -64,12 +64,10 @@ store.subscribe(function(){
 
         return ( 
         	<div>
-        		<UICouter count={this.state.count} />
+        		<UICouter count={this.state.count} add={this.add} reduce={this.reduce}/>
         	</div>
         )
     }
 }
 
 ReactDOM.render(<Counter />,document.getElementById('content'))
-
-
