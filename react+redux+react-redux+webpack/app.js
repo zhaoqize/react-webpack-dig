@@ -10,7 +10,7 @@ const store = createStore(countReducer)
 //UI层
 class UICouter extends Component{
 	render(){
-
+    
 		const {count,add,reduce} = this.props;
 
 		return(
@@ -27,7 +27,7 @@ class UICouter extends Component{
 //Redux state 到 component props的映射
 function mapStateToProps(state) {
   return {
-    value: state.count
+    count: state.count
   }
 }
 
