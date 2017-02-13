@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import {createStore} from 'redux'
+import {Provider,connect} from 'react-redux'
 import {add_todo,subtraction_todo} from './Redux/action/index.js'
 import {countReducer} from './Redux/reducer/index.js'
 
@@ -41,7 +42,7 @@ function mapDispatchToProps(dispatch) {
 const App = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Counter)
+)(UICouter)
 
 
 ReactDOM.render(
