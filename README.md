@@ -5,7 +5,7 @@
 
 2.一旦进行`Action`的时候，会触发`reducer`处理函数。这个函数做具体的`state`操作。然后返回一个新的`state`
 
-3.通过`store.subscribe`监听`state`的变化，因为一旦state变化会自动触发`tore.subscribe`
+3.通过`store.subscribe`监听`state`的变化，因为一旦state变化会自动触发`store.subscribe`
 ## 操作步骤
 
 1.写Action
