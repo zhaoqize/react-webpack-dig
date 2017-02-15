@@ -90,3 +90,42 @@ const createStore = (reducer) => {
   return { getState, dispatch, subscribe };
 };
 ```
+## react+react-redux+redux
+
+使用react-redux来链接两者就方便快捷很多了。相当于粘合剂，将react跟redux无缝链接。
+
+我们只需要定义两个映射state与操作,react-redux会自定触发render
+```js
+//Redux state 到 component props的映射
+function mapStateToProps(state) {
+  return {
+    count: state.count
+  }
+}
+
+//Redux actions 到 component props的映射
+function mapDispatchToProps(dispatch) {
+  return {
+    add: () => dispatch(add_todo('增加+')),
+    reduce:() => dispatch(subtraction_todo('递减-'))
+  }
+}
+```
+
+然后用connect将两者链接起来
+```js
+const App = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(UICouter)
+```
+
+最后在用Provider在顶层将我们的组件包裹,并传入store即可。
+```js
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('content')
+)
+```
